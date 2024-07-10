@@ -6,6 +6,13 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("GRRhNaAg24uC-geSR"); 
+        })();
+    </script>
 </head>
 <body>
     <Nav class="nav-bar">
@@ -107,7 +114,26 @@
             </ul>
         </div>
         <a class="cv_button" href="https://1drv.ms/b/c/9227c11374916c26/Ed5vwyHJB4hNlC9ck9GVofIBqoDfXjvSw8eH7ITI0jfc0g?e=wgiVar" download="Mi_CV.pdf">Descargar CV</a>
-
+        <div class="contact_form_container">
+            <h2>Contactar</h2>
+            <form id="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Asunto:</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <input type="submit" value="Send Message">
+                <div class="spinner" id="spinner"></div>
+            </form>
+            <div class="confirmation-message" id="confirmation-message"></div>
+        </div>
     </section>
     <div class="footer">
         <p class="footer_text">**This is just a fake portfolio. All the projects and contact details given are not real.</p>
@@ -117,5 +143,44 @@
                 freeCodeCamp <i class="fa fa-free-code-camp" aria-hidden="true"></i>
             </a>
         </p>
+
+        <script type="text/javascript">
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                var spinner = document.getElementById('spinner');
+                var confirmationMessage = document.getElementById('confirmation-message');
+    
+                // Mostrar el spinner
+                spinner.style.display = 'inline-block';
+                confirmationMessage.style.display = 'none';
+    
+                // Variables del formulario
+                var templateParams = {
+                    from_name: document.getElementById('name').value,
+                    from_email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+    
+                // Enviar el formulario usando EmailJS
+                emailjs.send('email_sender', 'contact_template', templateParams).then(
+                    function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        spinner.style.display = 'none';
+                        confirmationMessage.style.display = 'block';
+                        confirmationMessage.className = 'confirmation-message success';
+                        confirmationMessage.textContent = 'Message sent successfully!';
+                    },
+                    function(error) {
+                        console.log('FAILED...', error);
+                        spinner.style.display = 'none';
+                        confirmationMessage.style.display = 'block';
+                        confirmationMessage.className = 'confirmation-message error';
+                        confirmationMessage.textContent = 'Failed to send message. Please try again later.';
+                    }
+                );
+            });
+        </script>
 </body>
 </html>
