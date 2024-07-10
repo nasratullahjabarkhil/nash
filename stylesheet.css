@@ -416,4 +416,12 @@ main {
     font-size: 8px;
     font-family:'Raleway', sans-serif;;
 }
+
+.section_icons {
+  height: 800px;
+}
+
+.contact_form_container {
+  width:80%;
+}
 }
