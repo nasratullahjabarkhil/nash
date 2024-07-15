@@ -385,11 +385,11 @@ main {
 
   .main_projects {
     height: 130px;
-    width: 120px;
+    width: 155px;
   }
 
   .main_project-text {
-    width: 120px;
+    width: 155px;
     justify-content: center;
     text-align: center;
   }
