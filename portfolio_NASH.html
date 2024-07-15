@@ -4,75 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("GRRhNaAg24uC-geSR"); 
+        })();
+    </script>
 </head>
 <body>
     <Nav class="nav-bar">
         <ul class="navbar_list">
             <li class="navbar_list_item">
-                <a href="#about_me" class="navbar_text">About</a>
+                <a href="#about_me" class="trans-navAbout">About</a>
             </li>
             <li class="navbar_list_item">
-                <a href="#my_work" class="navbar_text">Work</a>
+                <a href="#my_work" class="trans-navProjects">Projects</a>
             </li>
             <li class="navbar_list_item">
-                <a href="#contact_me" class="navbar_text">Contact</a>
+                <a href="#contact_me" class="trans-navContact">Contact</a>
             </li>
         </ul>
+        <div class="lan-button">
+            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('es')">Español</button>
+        </div>
     </Nav>
     <header class="header" id="about_me">
-        <h1>Hi I am Nasratullah</h1>
-        <h2>a multiplatform application developer</h2>
+        <h1 class="trans-aboutGreetings">Hi I am Nasratullah</h1>
+        <h2 class="trans-aboutContent">a multiplatform application developer</h2>
     </header>
     <main id="my_work">
-        <p class="main_header">
-                These are some of my projects</p>
+        <p class="main_header trans-mainHeader">These are some of my projects</p>
         <div class="main_container">
             <span>
                 <a class="main_project_a" href="https://codepen.io/freeCodeCamp/full/zNqgVx" target="blank">
                     <img class="main_projects" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/tribute.jpg" alt="first-project">
-                    <p class="main_project-text">Tribute Page</p>
+                    <p class="main_project-text trans-project1">Tribute Page</p>
                 </a>
             </span>
             <span>
                 <a class="main_project_a" href="https://codepen.io/freeCodeCamp/full/qRZeGZ" target="blank" >
                     <img class="main_projects" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/random-quote-machine.png" alt="second-project">
-                    <p class="main_project-text">Random Quote Machine</p>
+                    <p class="main_project-text trans-project2">Random Quote Machine</p>
                 </a>
             </span>
             <span>
                 <a class="main_project_a" href="https://codepen.io/freeCodeCamp/full/wgGVVX" target="blank">
                     <img class="main_projects"  src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/calc.png" alt="third-project">
-                    <p class="main_project-text">JavaScript Calculator</p>
+                    <p class="main_project-text trans-project3">JavaScript Calculator</p>
                 </a>
             </span>
             <span>
                 <a class="main_project_a" href="https://codepen.io/freeCodeCamp/full/mVEJag" target="blank">
                     <img class="main_projects"  src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/map.jpg" alt="fourth-project">
-                    <p class="main_project-text">Map Data Across The Globe</p>
+                    <p class="main_project-text trans-project4">Map Data Across The Globe</p>
                 </a>
             </span>
             <span>
                 <a class="main_project_a" href="https://codepen.io/freeCodeCamp/full/wGqEga" target="blank">
                     <img class="main_projects" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/wiki.png" alt="fifth-project">
-                    <p class="main_project-text">Wikipedia Viewer</p>
+                    <p class="main_project-text trans-project5">Wikipedia Viewer</p>
                 </a>
             </span>
             <span>
                 <a class="main_project_a" href="https://codepen.io/freeCodeCamp/full/KzXQgy" target="blank" >
                     <img class="main_projects" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/tic-tac-toe.png" alt="sixth-project">
-                    <p class="main_project-text" >Tik Tok Toe Game</p>
+                    <p class="main_project-text trans-project6">Tik Tok Toe Game</p>
                 </a>
             </span>
         </div>
         <div class="main_button">
-            <a href="https://codepen.io/FreeCodeCamp/" target="blank" class="show-all-btn"> Show All ></a>
+            <a href="https://codepen.io/FreeCodeCamp/" target="blank" class="show-all-btn trans-showAllBtn"> Show All ></a>
         </div>
     </main>
     <section class="section_icons" id="contact_me">
-        <span class="section_text1">Let's work togheter</span>
-        <span class="section_text2">How do you take your coffee?</span>
+        <span class="section_text1 trans-sectionText1">Let's work together</span>
+        <span class="section_text2 trans-sectionText2">How do you take your coffee?</span>
         <div>
             <ul class="social-media-icons">
                 <li class="icons">
@@ -106,16 +115,75 @@
                 </li>
             </ul>
         </div>
-        <a class="cv_button" href="https://1drv.ms/b/c/9227c11374916c26/Ed5vwyHJB4hNlC9ck9GVofIBqoDfXjvSw8eH7ITI0jfc0g?e=wgiVar" download="Mi_CV.pdf">Descargar CV</a>
-
+        <a class="cv_button trans-downloadCV" href="https://1drv.ms/b/c/9227c11374916c26/Ed5vwyHJB4hNlC9ck9GVofIBqoDfXjvSw8eH7ITI0jfc0g?e=wgiVar" download="Mi_CV.pdf">Descargar CV</a>
+        <div class="contact_form_container">
+            <h2 class="trans-contactTitle">Contactar</h2>
+            <form id="contact-form">
+                <label for="name" class="trans-nameLabel">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email" class="trans-emailLabel">Correo:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject" class="trans-subjectLabel">Asunto:</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message" class="trans-messageLabel">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <input type="submit" value="Send Message" class="trans-sendMessageBtn">
+                <div class="spinner" id="spinner"></div>
+            </form>
+            <div class="confirmation-message" id="confirmation-message"></div>
+        </div>
     </section>
     <div class="footer">
-        <p class="footer_text">**This is just a fake portfolio. All the projects and contact details given are not real.</p>
+        <p class="footer_text trans-footerText">**This is just a fake portfolio. All the projects and contact details given are not real.</p>
         <p class="footer_text">
             © Created for
             <a class="footer_a" href="https://www.freecodecamp.com/" target="blank">
                 freeCodeCamp <i class="fa fa-free-code-camp" aria-hidden="true"></i>
             </a>
         </p>
+
+        <script type="text/javascript">
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                var spinner = document.getElementById('spinner');
+                var confirmationMessage = document.getElementById('confirmation-message');
+    
+                // Mostrar el spinner
+                spinner.style.display = 'inline-block';
+                confirmationMessage.style.display = 'none';
+    
+                // Variables del formulario
+                var templateParams = {
+                    from_name: document.getElementById('name').value,
+                    from_email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+    
+                // Enviar el formulario usando EmailJS
+                emailjs.send('email_sender', 'contact_template', templateParams).then(
+                    function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        spinner.style.display = 'none';
+                        confirmationMessage.style.display = 'block';
+                        confirmationMessage.className = 'confirmation-message success';
+                        confirmationMessage.textContent = 'Message sent successfully!';
+                    },
+                    function(error) {
+                        console.log('FAILED...', error);
+                        spinner.style.display = 'none';
+                        confirmationMessage.style.display = 'block';
+                        confirmationMessage.className = 'confirmation-message error';
+                        confirmationMessage.textContent = 'Failed to send message. Please try again later.';
+                    }
+                );
+            });
+        </script>
+        <script src="js/script.js"></script>
 </body>
 </html>

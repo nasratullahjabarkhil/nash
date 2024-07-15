@@ -2,62 +2,76 @@
   margin: 0px;
   padding: 0px;
 }
+
 body {
-  font-family: Arial, sans-serif;
-  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
-
-.theme-toggle {
-  position: fixed;
-  top: 80px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-}
-
-.dark-theme {
-  background-color: #333;
-  color: #fff;
-}
-
-.dark-theme .cv_button {
-  background-color: #555;
-}
-
-.dark-theme .cv_button:hover {
-  background-color: #444;
-}
-
 
 .nav-bar {
   position: fixed;
   width: 100%;
+  background-color: rgb(223, 108, 108);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 75px;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar_list {
-  background-color: rgb(223, 108, 108);
   list-style-type: none;
   display: flex;
-  justify-content: flex-end;
-  font-size: 25px;
-  font-weight: 700;
-  font-family: "Poppins", sans-serif;
-  height: 75px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: flex-start;
 }
 
 .navbar_list_item {
-  padding-left: 10px;
-  padding-right: 20px;
-  padding-top: 20px;
+  margin: 0 5px;
+  padding: 20px;
+  position: relative;
+}
+
+.navbar_list_item a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .navbar_list_item:hover {
   background-color: rgb(166, 170, 187);
 }
 
-.navbar_text {
+.lan-button {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.lan-button button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  color: rgb(223, 108, 108);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.lan-button button:hover {
+  background-color: rgb(166, 170, 187);
+}
+
+.trans-navAbout,
+.trans-navProjects,
+.trans-navContact {
   text-decoration: none;
   color: white;
 }
@@ -113,8 +127,8 @@ main {
 }
 
 .main_projects {
-  height: 400px;
-  width: 400px;
+  height: 450px;
+  width: 500px;
   padding: 20px;
   padding-bottom: 0px;
   border-start-start-radius: 30px;
@@ -127,7 +141,7 @@ main {
   align-items: center;
   background-color: rgb(37, 31, 19);
   height: 60px;
-  width: 400px;
+  width: 500px;
   margin-top: -4px;
   margin-left: 20px;
   border-end-end-radius: 10px;
@@ -177,9 +191,111 @@ main {
 .cv_button:hover {
   background-color: #0056b3;
 }
+.contact_form_container {
+  width: 100%;
+  margin-top: 30px;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
 
+.contact_form_container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact_form_container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_form_container label {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.contact_form_container input[type="text"],
+.contact_form_container input[type="email"],
+.contact_form_container textarea {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.contact_form_container input[type="text"]:focus,
+.contact_form_container input[type="email"]:focus,
+.contact_form_container textarea:focus {
+  border-color: #0066cc;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+
+.contact_form_container textarea {
+  resize: vertical;
+}
+
+.contact_form_container input[type="submit"] {
+  padding: 10px 15px;
+  background-color: #0066cc;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact_form_container input[type="submit"]:hover {
+  background-color: #005bb5;
+}
+
+.spinner {
+  display: none;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #4caf50;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin-left: 45%;
+  margin-top: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.confirmation-message {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.success {
+  color: #4caf50;
+  margin-left: 35%;
+}
+
+.error {
+  color: #f44336;
+  margin-left: 25%;
+}
 .section_icons {
-  height: 450px;
+  height: 900px;
   width: 100%;
   background-color: rgb(149, 149, 150);
   display: flex;
@@ -215,37 +331,51 @@ main {
   transform: scale(1.1);
 }
 
-.section_icons_a{
-    list-style-type: none;
-    text-decoration: none;
-    color: bisque;
+.section_icons_a {
+  list-style-type: none;
+  text-decoration: none;
+  color: bisque;
 }
 
-.footer{
-    display: flex;
-    justify-content: space-around;
-    background-color: rgb(130, 141, 148);
-    color: white;
-}  
-
-.footer_text{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-size: 20px;
-    font-family:'Raleway', sans-serif;;
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(130, 141, 148);
+  color: white;
 }
 
-.footer_a{
-    list-style-type: none;
-    text-decoration: none;
-    color: white;
+.footer_text {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+.footer_a {
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
 }
 @media only screen and (max-width: 600px) {
+
+  .nav-bar {
+    height: 40px;
+  }
   .navbar_list {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+  .lan-button button {
+    font-size: 10px;
+  }
+  .navbar_list_item a {
+    font-size: 15px;
   }
 
+  .navbar_list_item {
+    padding: 2px;
+    font-size: 15px;
+  }
   .header {
     text-align: center;
     justify-content: flex-start;
@@ -299,23 +429,23 @@ main {
   .social-media-icons {
     font-size: 10px;
   }
-  
+
   .icons {
     padding-left: 0px;
     padding-right: 10px;
     padding-top: 20px;
   }
-  .footer{
+  .footer {
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(130, 141, 148);
     color: white;
-} 
+  }
 
-.footer_text{
+  .footer_text {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 8px;
-    font-family:'Raleway', sans-serif;;
-}
+    font-family: "Raleway", sans-serif;
+  }
 }
